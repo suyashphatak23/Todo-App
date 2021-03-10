@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Task List</title>
+</head>
+<body class="text-center">
+    <div class="container" id="heading">
+      <p>
+        Current Tasks
+      </p>
+    </div>
+
+    {% block content %}
+        <div class="container">
+            {% if incomplete_count == 0 and completed_count == 0 %}
+                <h3 class="dislpay-4">Nicely Done &#128526; No Tasks &#10024;</h3>
+            {% else %}
+                <a class="notification" style="border:1px solid black;padding-top:10px;padding-bottom:10px;">
+                    <span style='font-size:25px;'>&#9989;</span>
+                    <span style="font-size: 20px;">{{ completed_count }}</span>
+                </a>
+
+                <a class="notification" style="border:1px solid black;padding:2px;padding-top:10px;padding-bottom:10px;">
+                    <span style='font-size: 25px;'>&#10060;</span>
+                    <span style="font-size: 20px;">{{ incomplete_count }}</span>
+                </a>
+            {% endif %}
+        </div>
+
+        <div class="container" style="padding: 15px;max-width:500px;">
+            <ul type=none>
+                {% for todo in todos %}
+                    <form action="{% url 'delete' todo.id %}" method="post">
+                        <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-bottom:20px;">
+                            {% csrf_token %}
+                                <div class="card-header">
+                                    <b style="text-transform: uppercase;">Title</b>
+                                    <br>
+                                    {{ todo.header }}
+                                </div>
+                                <div class="card-body">
+                                    <b style="text-transform: uppercase;">Description</b>
+                                    <br>
+                                    {{ todo.content }}
+                                </div>
+                                <div class="card-body">
+                                    {% if todo.isCompleted %}
+                                        <p>
+                                            <b style="text-transform: uppercase;">Status:</b><br>
+                                            <span style="font-size:40px;color:green;">&#10003;</span>
+                                        </p>
+                                        <input type="submit" class="btn btn-small btn-outline-danger" value="Delete" name="delete">
+                                        <input type="submit" class="btn btn-small btn-outline-primary" value="Update" name="update">
+                                    {% else %}
+                                        <p>
+                                            <b style="text-transform: uppercase;">Status:</b><br>
+                                            <span style="font-size:40px;color:red;">&#10005;</span>
+                                        </p>
+                                        <input type="submit" class="btn btn-small btn-outline-danger" value="Delete" name="delete">
+                                        <input type="submit" class="btn btn-small btn-outline-success" value="Mark as complete" name="complete">
+                                        <input type="submit" class="btn btn-small btn-outline-primary" value="Update" name="update">
+                                    {% endif %}
+
+                                </div>
+                                <div class="card-footer text-muted">
+                                    {{ todo.timestamp }}
+                                </div>
+                        </div>
+                    </form>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="container" style="border: 1px solid black; padding: 15px;margin-bottom: 20px;max-width:600px;">
+            <h1 class="display-4">New Task</h1>
+            <form action="{% url 'index' %}" method="POST">
+                {% csrf_token %}
+                    <div class="form-group">
+                        <label for="header">Title</label>
+                        <input type="text" class="form-control" name="title" />
+                    </div>
+                    <div class="form-group">
+                        <label for="header">Description</label>
+                        <input type="text" class="form-control" name="text" />
+                    </div>
+                    <input class="btn btn-outline-success" type="submit" value="CREATE" name="submit">
+            </form>
+        </div>
+
+        <footer>
+            <p class="text-danger text-center">Copyright @2021</p>
+        </footer>
+    {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
