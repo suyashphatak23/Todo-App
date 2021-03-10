@@ -16,27 +16,27 @@ In this project, I have created a todo app which will create task with title and
 
 ### Webpage with no task
 In this output there are no current task to be done so it will display following message.
-<img src="https://github.com/suyashphatak23/To-Do-Task-App/blob/main/Outputs/NoTask.PNG" title="No Task" width="auto" height="auto" alt="No Task">
+<img src="https://github.com/suyashphatak23/ToDo-App/blob/main/Outputs/NoTask.PNG" title="No Task" width="auto" height="auto" alt="No Task">
 
 ### Creating New Task
 In this output, we are generating a task using the input given to us.
-<img src="https://github.com/suyashphatak23/To-Do-Task-App/blob/main/Outputs/NewTask.PNG" title="New Task" width="auto" height="auto" alt="New Task">
+<img src="https://github.com/suyashphatak23/ToDo-App/blob/main/Outputs/NewTask.PNG" title="New Task" width="auto" height="auto" alt="New Task">
 
 ### After Creating a Task
 In this output, task will be displayed in following format. The count of complete and incomplete task will display below header.
-<img src="https://github.com/suyashphatak23/To-Do-Task-App/blob/main/Outputs/TaskDisplay.PNG" title="Display Task" width="auto" height="auto" alt="Display Task">
+<img src="https://github.com/suyashphatak23/ToDo-App/blob/main/Outputs/TaskDisplay.PNG" title="Display Task" width="auto" height="auto" alt="Display Task">
 
 ### Updating Task
 In this output, we have clicked the output button of the task so it will redirect us to another template called update. In this template I have given the input field to update title as well as its description.
-<img src="https://github.com/suyashphatak23/To-Do-Task-App/blob/main/Outputs/UpdateTask.PNG" title="Update Task" width="auto" height="auto" alt="Update Task">
+<img src="https://github.com/suyashphatak23/ToDo-App/blob/main/Outputs/UpdateTask.PNG" title="Update Task" width="auto" height="auto" alt="Update Task">
 
 ### Updated Task
 In this output, after updating the output we will be redirected to homepage.
-<img src="https://github.com/suyashphatak23/To-Do-Task-App/blob/main/Outputs/UpdatedUI.PNG" title="Update UI" width="auto" height="auto" alt="Update UI">
+<img src="https://github.com/suyashphatak23/ToDo-App/blob/main/Outputs/UpdatedUI.PNG" title="Update UI" width="auto" height="auto" alt="Update UI">
 
 ### Completed Task
 In this output, I have clicked complete button to mark task as complete. After Completing we can delete it using delete button.
-<img src="https://github.com/suyashphatak23/To-Do-Task-App/blob/main/Outputs/AfterComplete.PNG" title="Complete UI" width="auto" height="auto" alt="Complete UI">
+<img src="https://github.com/suyashphatak23/ToDo-App/blob/main/Outputs/AfterComplete.PNG" title="Complete UI" width="auto" height="auto" alt="Complete UI">
 
 # Clone
 
