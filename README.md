@@ -6,7 +6,7 @@
 
 <a href="https://getbootstrap.com/"><img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-social-logo.png" title="bootstrap" width="300px" height="auto" alt="bootstrap"></a>
 
-# To Do Task Application
+# To Do Task Application (CRUD OPERATIONS)
 In this project, I have created a todo app which will create task with title and description. In this app, I have used django-version 3 to create this app. It is basic application. The frontend has few designs in it but it looks fine. I will be trying some of the new frontend technologies later. I have explained detailed part in output section. It was fun to do this application. I learned django basics a year ago so this project was my revision.
 
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger)
